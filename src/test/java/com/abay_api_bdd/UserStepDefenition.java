@@ -11,9 +11,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-
 
 @ContextConfiguration(classes = SpringBddApplication.class)
 @AutoConfigureMockMvc
@@ -24,9 +23,10 @@ public class UserStepDefenition extends StepDefinitions{
 
     ResultActions action;
 
-    @When("I make the call /api/users")
-    public void i_make_the_call_api_users() {
-        System.out.println("Call made");
+    @Given("I make the call {string}")
+    public void i_make_the_call(String endpoint) {
+        // Usa endpoint normalmente, por exemplo:
+        System.out.println("Calling: " + endpoint);
     }
 
     @Then("I create a new user with the name 'Carlos', username 'carlos123', email 'carlos123@gmail.com' and password 'test1234'")
