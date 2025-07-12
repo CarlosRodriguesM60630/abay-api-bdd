@@ -1,21 +1,17 @@
 package com.abay_api_bdd;
 
-import io.cucumber.java.en.*;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-import org.junit.jupiter.api.Assertions.*;
+import io.cucumber.spring.CucumberContextConfiguration;
 
+
+@RunWith(SpringRunner.class)
+@AutoConfigureMockMvc
+@CucumberContextConfiguration
+@SpringBootTest(classes = SpringBddApplication.class)
 public class StepDefinitions {
-
-    @Given("an example scenario")
-    public void anExampleScenario() {
-    }
-
-    @When("all step definitions are implemented")
-    public void allStepDefinitionsAreImplemented() {
-    }
-
-    @Then("the scenario passes")
-    public void theScenarioPasses() {
-    }
-
+    
 }
